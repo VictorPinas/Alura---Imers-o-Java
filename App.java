@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Map;
 
 public class App {
+    /**
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
 
         // fazer uma conexão HTTP e buscar os top 250 filmes
@@ -21,7 +25,12 @@ public class App {
         // extrair só os dados que interessam (título, poster, classificação)
         var parser = new Jsonparser();
         List<Map<String, String>> listaDeFilmes = parser.parse(body);
+        System.out.println(listaDeFilmes.size());
+        System.out.println(listaDeFilmes.get(0));
 
         // exibir e manipular os dados
+        for (Map<String, String> filme : listaDeFilmes) {
+            System.out.println(filme.get(key: "title"));
+        }
     }
 }
