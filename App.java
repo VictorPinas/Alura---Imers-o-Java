@@ -9,7 +9,7 @@ public class App {
         String url = "https://mocki.io/v1/9a7c1ca9-29b4-4eb3-8306-1adb9d159060";
         URI endereco = URI.create(url);
         var client = HttpClient.newHttpClient();
-        HttpRequest
+        HttpRequest request = HttpRequest.newBuilder(endereco).GET().build();
 
         // extrair só os dados que interessam (título, poster, classificação)
 
