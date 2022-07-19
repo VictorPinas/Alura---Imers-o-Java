@@ -20,7 +20,7 @@ public class FabricaStickers {
         int largura = imagemOriginal.getWidth();
         int altura = imagemOriginal.getHeight();
         int novaAltura = altura + 200;
-        BufferedImage novaImagem = new BufferedImage(largura, altura, novaAltura);
+        BufferedImage novaImagem = new BufferedImage(largura, altura, novaAltura, BufferedImage.TRANSLUCENT);
 
         // copiar a imagem original para nova imagem
         Graphics2D graphics = (Graphics2D) novaImagem.getGraphics();
@@ -35,6 +35,15 @@ public class FabricaStickers {
         graphics.drawString("Imagem obtida", 100, novaAltura - 100);
 
         // escrever a nova imagem em um arquivo
-        ImageIO.write(novaImagem, "png", new File(novaImagem.png));
+        ImageIO.write(novaImagem, "png", new File(nomeArquivo));
+    }
+
+    /**
+     * @param args
+     * @throws Exception
+     */
+    public static void main(String[] args) throws Exception {
+        var fabrica = new FabricaStickers();
+        fabrica.gerar(null, null);
     }
 }
