@@ -14,18 +14,20 @@ public class Jsonparser {
             List<Map<String, String>> dados = new ArrayList<>();
 
             for (String item : items) {
-    
+
                 Map<String, String> atributosItem = new HashMap<>();
-    
+
                 Matcher matcherAtributosJson = REGEX_ATRIBUTOS_JSON.matcher(item);
                 while (matcherAtributosJson.find()) {
                     String atributo = matcherAtributosJson.group(1);
                     String valor = matcherAtributosJson.group(2);
                     atributosItem.put(atributo, valor);
                 }
-    
+
                 dados.add(atributosItem);
             }
-    
+
             return dados;
+        }
+    }
 }
