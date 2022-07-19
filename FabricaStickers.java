@@ -19,7 +19,7 @@ public class FabricaStickers {
         int largura = imagemOriginal.getWidth();
         int altura = imagemOriginal.getHeight();
         int novaAltura = altura + 200;
-        BufferedImage novaImagem = new BufferedImage(largura, altura, novaAltura, BufferedImage.TRANSLUCENT);
+        BufferedImage novaImagem = new BufferedImage(largura, altura, novaAltura);
 
         // copiar a imagem original para nova imagem
         Graphics2D graphics = (Graphics2D) novaImagem.getGraphics();
