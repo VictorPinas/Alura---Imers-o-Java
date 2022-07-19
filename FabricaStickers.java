@@ -1,5 +1,5 @@
 
-//import java.io.BufferedInputStream;
+import java.io.BufferedInputStream;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
@@ -39,12 +39,4 @@ public class FabricaStickers {
         ImageIO.write(novaImagem, "png", new File(nomeArquivo));
     }
 
-    /**
-     * @param args
-     * @throws Exception
-     */
-    public static void main(String[] args) throws Exception {
-        var fabrica = new FabricaStickers();
-        fabrica.gerar(null, null);
-    }
 }
