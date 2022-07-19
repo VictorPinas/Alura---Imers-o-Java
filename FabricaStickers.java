@@ -1,4 +1,5 @@
-import java.io.BufferedInputStream;
+
+//import java.io.BufferedInputStream;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
@@ -20,7 +21,7 @@ public class FabricaStickers {
         int largura = imagemOriginal.getWidth();
         int altura = imagemOriginal.getHeight();
         int novaAltura = altura + 200;
-        BufferedImage novaImagem = new BufferedImage(largura, altura, novaAltura, BufferedImage.TRANSLUCENT);
+        BufferedImage novaImagem = new BufferedImage(largura, novaAltura, BufferedImage.TRANSLUCENT);
 
         // copiar a imagem original para nova imagem
         Graphics2D graphics = (Graphics2D) novaImagem.getGraphics();
