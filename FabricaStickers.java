@@ -10,7 +10,12 @@ import javax.imageio.ImageIO;
 
 public class FabricaStickers {
 
-    public void gerar(InputStream inputStream, String nomeArquivo) throws Exception {
+    /**
+     * @param inputStream
+     * @param nomeArquivo
+     * @throws Exception
+     */
+    public static void gerar(InputStream inputStream, String nomeArquivo) throws Exception {
 
         // leitura da imagem
         // InputStream
