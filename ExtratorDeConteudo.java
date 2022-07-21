@@ -1,5 +1,5 @@
 import java.util.list;
 
-public class ExtratorDeConteudo {
+public interface ExtratorDeConteudo {
     List<Conteudo> extraiConteudos(String json);
 }
