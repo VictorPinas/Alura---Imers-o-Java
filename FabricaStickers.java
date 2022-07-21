@@ -1,5 +1,4 @@
 
-import java.io.BufferedInputStream;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.image.BufferedImage;
