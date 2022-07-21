@@ -1,11 +1,15 @@
 import java.io.InputStream;
 import java.net.URL;
-
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 //import javax.print.event.PrintEvent;
 
 public class App {
+    private static Path createDirectories;
+
     /**
      * @param args
      * @throws Exception
@@ -20,8 +24,8 @@ public class App {
         // "https://raw.githubusercontent.com/alura-cursos/imersao-java/api/NASA-APOD.json";
         // ExtratorDeConteudo extrator = new ExtratorDeConteudoDaNasa();
 
-        var http = new ClienteHttp();
-        String json = http.buscaDados();
+        var http = new Cliente();
+        String json = http.buscaDados(url);
 
         // extrair só os dados que interessam (título, poster, classificação)
         List<Conteudo> conteudos = extrator.extraiConteudos(json);
@@ -35,7 +39,8 @@ public class App {
             InputStream InputStream = new URL(conteudo.getUrlImagem()).openStream();
             String nomeArquivo = "saida/" + conteudo.getTitulo() + ".png";
 
-            fabrica.gerar(InputStream, nomeArquivo);
+            Path saida = Paths.get(nomeArquivo);
+            saida = Files.createDirectories(saida);
 
             System.out.println(conteudo.getTitulo());
             System.out.println();
